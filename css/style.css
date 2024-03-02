@@ -6,3 +6,9 @@
 body{
     font-family: "Mulish", sans-serif;
 }
+.t-primary{
+    color: #12132D;
+}
+.b-primary{
+    background-color: #12132D;
+}
