@@ -144,11 +144,13 @@
             </div>
             <!-- Cards sections -->
             <div id="card-section-container" class="grid md:grid-cols-3 grid-cols-1 gap-6">
-                <div id="card-container" class="md:col-span-2 space-y-6">
+                <div id="card-container" class="md:col-span-2 md:order-1 order-2 space-y-6">
+                    <!-- Dynamic card start -->
                     <div
                         class="flex p-10 bg-[#F3F3F5] rounded-3xl space-x-6 hover:border border-[#797DFC] hover:bg-[#797DFC1A]">
                         <!-- picture -->
-                        <div class="avatar online">
+                        <div class="avatar relative">
+                            <span class="absolute h-4 w-4 rounded-full bg-green-500 -right-1 -top-1"></span>
                             <div class="w-[72px] h-[72px]  rounded-xl">
                                 <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                             </div>
@@ -200,21 +202,23 @@
                                 <img src="images/email 1.svg" alt="">
                             </div>
                         </div>
-
                     </div>
+                    <!-- Dynamic card end -->
 
                 </div>
                 <!-- Message count section -->
-                <div class="p-6 space-y-4 bg-[#12132D0D] rounded-3xl">
-                    <div class="flex justify-between">
-                        <p class="font-bold text-xl t-primary">Title</p>
-                        <p class="text-[#12132D99] font-inter">
-                            <img class="inline" src="images/seen.svg" alt="">
-                            <span>
-                                Mark as read(<span>0</span>)
-                            </span>
+                <div class="md:col-span-1 md:order-2 order-1">
+                    <div class="p-6 space-y-4  bg-[#12132D0D] rounded-3xl">
+                        <div class="flex justify-between">
+                            <p class="font-bold text-xl t-primary">Title</p>
+                            <p class="text-[#12132D99] font-inter">
+                                <img class="inline" src="images/seen.svg" alt="">
+                                <span>
+                                    Mark as read(<span>0</span>)
+                                </span>
 
-                        </p>
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <!-- Message count section end-->
