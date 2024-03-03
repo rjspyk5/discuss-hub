@@ -83,16 +83,47 @@ const appendDiscusSectionCard=(datas)=>{
                         <span>${el?.posted_time}</span>
                     </p>
                 </div>
-                <img src="images/email 1.svg" alt="">
+                <button type="button" class="readBtn"><img src="images/email 1.svg" alt=""></button>       
             </div>
         </div>
         `
         letsDiscusSectionCardContainer.appendChild(div);
-        console.log(el);
         
     });
-   
+    // add eventllister to every read button
+  const readBtns= document.getElementsByClassName("readBtn")
+for (const readBtn of readBtns) {
+    readBtn.addEventListener("click",(e)=>{handleClick(e)})
+  
+}
+}
+// Handle readClick and appending read post and also increasing msz count
+const readCardContainer=document.getElementById("read-Card-container");
+const mszCounter=[];
+const mszCounterContainer=document.getElementById("msz-counter")
+const handleClick=(e)=>{
+    const view=e.target.parentNode.parentNode.children[0].children[1].children[1].innerText;
+   const title=e.target.parentNode.parentNode.parentNode.children[0].children[1].innerText
+   const div=document.createElement("div");
+   div.className="p-4 bg-white rounded-2xl flex justify-between items-center"
+   div.innerHTML=`
+   <p class="font-semibold text-[#12132D]">${title}</p>
+                            <p class="flex space-x-1 font-inter text-[#12132D99]"><svg
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
 
+                                <span>${view}</span>
+                            </p>
+   `
+   readCardContainer.appendChild(div) 
+   mszCounter.push(title)
+   mszCounterContainer.innerText=mszCounter.length;
+  
 }
 
 // Data fetching from API
