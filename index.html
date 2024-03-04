@@ -67,17 +67,12 @@
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
                                 </svg>
-
-
-
                             </a>
                         </li>
-
                     </ul>
                 </div>
                 <a class="btn btn-ghost text-2xl md:text-4xl font-black">DiscussHub</a>
             </div>
-
             <div class="navbar-end">
                 <ul class="menu menu-horizontal hidden lg:flex  space-x-3">
                     <li>
@@ -131,7 +126,6 @@
         </div>
         <!-- Navbar end -->
         <!-- Banner section -->
-
         <section
             class="md:p-24 p-8 grid gap-10 md:grid-cols-9  bg-[#12132D] relative  grid-cols-1 rounded-[32px] mt-10 mx-7 xl:mx-0">
             <img class="absolute bottom-0 z-0" src="images/bgbanner.png" alt="">
@@ -145,10 +139,12 @@
                         opinion and win and wp forum
                         coffee mug!
                     </p>
+                    <!-- Search section -->
                     <label
                         class="input justify-between h-auto rounded-full w-auto max-w-[360px]  flex items-center pr-1">
-                        <input type="text" class="text-sm lg:text-base" placeholder="Search here anything" />
-                        <button
+                        <input id="searchValueContainer" type="text" class="text-sm lg:text-base"
+                            placeholder="Search here anything" />
+                        <button id="searchBtn"
                             class="text-center my-1   px-3 lg:px-6 py-2 md:py-3 hover:bg-[#9396e7]  bg-[#797DFC] text-white font-bold text-sm md:text-base lg:text-lg rounded-full"
                             type="button">Search</button>
                     </label>
