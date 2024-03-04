@@ -127,11 +127,29 @@ const handleClick=(e)=>{
 }
 
 // Data fetching from API
-const loadData=async(url,callback)=>{
-    const promisedData=await fetch(url);
-    const alldata=await promisedData.json();
-    callback(alldata);
+const loadData=(url,callback)=>{
+    letsDiscusSectionCardContainer.innerHTML=""
+    const loadDatas=async(url,callback)=>{
+        const promisedData=await fetch(url);
+        const alldata=await promisedData.json();
+        callback(alldata);
+    }
+    loadDatas(url,callback);
 }
+
+
+// Data searching fucntion
+const handleSearchClick=()=>{
+    if (searchValueContainer?.value) {
+        const PostByQuery= `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchValueContainer.value}`
+       loadData(PostByQuery,appendDiscusSectionCard)
+    }
+
+}
+// Searching functionality
+const searchBtn=document.getElementById("searchBtn");
+const searchValueContainer=document.getElementById("searchValueContainer")
+searchBtn.addEventListener("click",handleSearchClick)
 
 const LatestPosts="https://openapi.programming-hero.com/api/retro-forum/latest-posts";
 const AllPosts="https://openapi.programming-hero.com/api/retro-forum/posts"
