@@ -96,6 +96,7 @@ for (const readBtn of readBtns) {
     readBtn.addEventListener("click",(e)=>{handleClick(e)})
   
 }
+loading.classList.add("hidden")
 }
 // Handle readClick and appending read post and also increasing msz count
 const readCardContainer=document.getElementById("read-Card-container");
@@ -127,14 +128,20 @@ const handleClick=(e)=>{
 }
 
 // Data fetching from API
+const loading=document.getElementById("loading")
 const loadData=(url,callback)=>{
     letsDiscusSectionCardContainer.innerHTML=""
-    const loadDatas=async(url,callback)=>{
-        const promisedData=await fetch(url);
-        const alldata=await promisedData.json();
-        callback(alldata);
-    }
-    loadDatas(url,callback);
+    loading.classList.remove("hidden")
+    setTimeout(() => {
+        const loadDatas=async(url,callback)=>{
+            const promisedData=await fetch(url);
+            const alldata=await promisedData.json();
+            callback(alldata);
+        }
+        loadDatas(url,callback);
+
+    }, 2000);
+  
 }
 
 
