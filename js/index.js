@@ -31,6 +31,7 @@ const appendLatestData=(alldata)=>{
 const letsDiscusSectionCardContainer=document.getElementById("card-container");
 const appendDiscusSectionCard=(datas)=>{
     const data=datas.posts
+if (data.length>0) {
     data.forEach(el => {
         const div=document.createElement("div");
         div.className="flex md:p-10 p-5 bg-[#F3F3F5] rounded-3xl space-x-6 hover:border border-[#797DFC] hover:bg-[#797DFC1A]";
@@ -89,13 +90,20 @@ const appendDiscusSectionCard=(datas)=>{
         `
         letsDiscusSectionCardContainer.appendChild(div);
         
-    });
+    })
     // add eventllister to every read button
-  const readBtns= document.getElementsByClassName("readBtn")
+  const readBtns= document.getElementsByClassName("readBtn");
 for (const readBtn of readBtns) {
     readBtn.addEventListener("click",(e)=>{handleClick(e)})
   
+};
+} else {
+    letsDiscusSectionCardContainer.innerHTML=`
+    <h1 class="font-black text-4xl text-red-500 text-center">Sorry No data found.Try with another word</h1>
+    `
 }
+   
+
 loading.classList.add("hidden")
 }
 // Handle readClick and appending read post and also increasing msz count
