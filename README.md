@@ -1,3 +1,3 @@
-discuss-hub
+discuss-hub practise project
 
 
