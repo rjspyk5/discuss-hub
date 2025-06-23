@@ -1,4 +1,3 @@
-discuss-hub practise project:
-demo link: discuss-hub.com
+discuss-hub blog website
 
 
